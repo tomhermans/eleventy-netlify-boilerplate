@@ -5,7 +5,9 @@
   "scripts": {
     "build": "npx eleventy",
     "watch": "npx eleventy --watch",
-    "debug": "DEBUG=* npx eleventy"
+    "debug": "DEBUG=* npx eleventy",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve"
   },
   "repository": {
     "type": "git",
