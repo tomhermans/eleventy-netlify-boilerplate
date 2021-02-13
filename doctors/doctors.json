@@ -1,0 +1,6 @@
+{
+	"layout": "layouts/doctor.njk",
+	"permalink": "doctors/{{ title | slug }}/index.html",
+	"author": "Anonymous",
+	"tags": ["doctor"]
+}

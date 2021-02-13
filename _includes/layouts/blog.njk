@@ -1,12 +1,10 @@
 ---
-layout: layouts/base2.njk
+layout: layouts/base.njk
 section: blog
 permalink: /blog/index.html
 ---
 <h1>{{ title }}</h1>
 
-
-{% include "partials/_artsen.njk" %}
 {{ layoutContent | safe }}
 
 {% set postslist = collections.post %}

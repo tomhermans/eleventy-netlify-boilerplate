@@ -1,0 +1,22 @@
+---
+layout: layouts/base2.njk
+section: artsen
+permalink: /artsen/index.html
+---
+
+<h1>{{ title }}</h1>
+
+{{ layoutContent | safe }}
+
+<ul style="list-style-type: none; padding: 0;">
+	{% for doctor in collections.doctor %}
+	<li>
+		<div>
+			<h2>{{ doctor.data.name }}</h2>
+			<small>{{ doctor.data.date }}</small>
+			{{ doctor.data.content | safe }}
+		</div>
+	</li>
+	{% endfor %}
+</ul>
+<!-- {% include "components/postslist.njk" %} -->
