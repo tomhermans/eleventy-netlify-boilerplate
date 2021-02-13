@@ -1,9 +1,15 @@
+
 :root {
-	--primary: blue;
+	--primary: rgb(37, 37, 160);
 	--secondary: white;
 	--background: #FFF0EB;
+  --h: 120;
+  --s: 60%;
+  --l: 70%;
 }
-
+.bg-red-300 {
+  background-color: hsl(var(--h),var(--s),var(--l))
+}
 *, *:before, *:after {
   box-sizing: border-box;
 }

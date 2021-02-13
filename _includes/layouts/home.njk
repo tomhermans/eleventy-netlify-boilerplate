@@ -3,7 +3,15 @@ layout: layouts/base.njk
 section: home
 ---
 
-{% include "partials/doctors.njk" %}
+{% from 'macros/newcard.njk' import newCard %}
 
+<ol>
+  {% for post in collections.post %}
+      {{ newCard(post, element = 'li', class = 'bg-red-300') }}
+  {% endfor %}
+</ol>
+
+
+{% include "partials/doctors.njk" %}
 
 {{ layoutContent | safe }}
