@@ -13,8 +13,9 @@ permalink: /artsen/index.html
 	<li>
 		<div>
 			<h2>{{ doctor.data.name }}</h2>
-			<small>{{ doctor.data.date }}</small>
 			{{ doctor.data.content | safe }}
+      {{ doctor.data.thumbnail | safe }}
+      <img src="{{ doctor.data.thumbnail | safe }}" alt="">
 		</div>
 	</li>
 	{% endfor %}
