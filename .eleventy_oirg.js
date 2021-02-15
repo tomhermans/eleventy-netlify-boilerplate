@@ -11,31 +11,6 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './style.css' });
 
-	eleventyConfig.addPassthroughCopy({
-		'./node_modules/alpinejs/dist/alpine.js': './js/alpine.js',
-	});
-
-	eleventyConfig.addShortcode('version', function () {
-		return String(Date.now());
-	});
-
-	eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
-		if (
-			process.env.ELEVENTY_PRODUCTION &&
-			outputPath &&
-			outputPath.endsWith('.html')
-		) {
-			let minified = htmlmin.minify(content, {
-				useShortDoctype: true,
-				removeComments: true,
-				collapseWhitespace: true,
-			});
-			return minified;
-		}
-
-		return content;
-	});
-
 	// Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
@@ -77,6 +52,10 @@ module.exports = function (eleventyConfig) {
 		return DateTime.fromJSDate(dateObj).toFormat('yyyy-MM-dd');
 	});
 
+	eleventyConfig.addShortcode('version', function () {
+		return String(Date.now());
+	});
+
 	// Minify CSS
 	eleventyConfig.addFilter('cssmin', function (code) {
 		return new CleanCSS({}).minify(code).styles;
@@ -109,6 +88,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('favicon.ico');
 	eleventyConfig.addPassthroughCopy('static/img');
 	eleventyConfig.addPassthroughCopy('static/fonts');
+	eleventyConfig.addPassthroughCopy('admin');
 	eleventyConfig.addPassthroughCopy('_includes/assets/');
 
 	/* Markdown Plugins */

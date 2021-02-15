@@ -2,14 +2,10 @@
   "name": "eleventy-netlify-boilerplate",
   "version": "1.0.3",
   "description": "A boilerplate for building a fast static website with the Eleventy static site generator, for deployment to Netlify.",
+  
   "scripts": {
-    "build": "npx eleventy",
-    "watch": "npx eleventy --watch",
-    "debug": "DEBUG=* npx eleventy",
-    "serve": "eleventy --serve",
-    "start": "eleventy --serve",
-    "postcss": "postcss _includes/assets/css/tailwind.css -o _site/_includes/assets/css/tailwind.css",
-    "tw": "npx tailwindcss build _includes/assets/css/tailwind.css -o _site/_includes/assets/css/tailwind.css"
+    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o _site/style.css && cleancss _site/style.css -o _site/style.css"
   },
   "repository": {
     "type": "git",
@@ -29,9 +25,7 @@
     "@11ty/eleventy": "^0.11.1",
     "luxon": "^1.25.0",
     "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.3.0"
-  },
-  "dependencies": {
+    "markdown-it-anchor": "^5.3.0",
     "@11ty/eleventy-navigation": "^0.1.6",
     "autoprefixer": "^10.2.4",
     "clean-css": "^4.2.1",

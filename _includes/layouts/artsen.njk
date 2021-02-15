@@ -8,11 +8,11 @@ permalink: /artsen/index.html
 
 {{ layoutContent | safe }}
 
-<ul style="list-style-type: none; padding: 0">
+<ul style="">
 	{% for doctor in collections.doctor %}
 	<li>
 		<div>
-			<h2>{{ doctor.data.name }}</h2>
+			<h2 class="text-3xl">{{ doctor.data.name }}</h2>
 			{{ doctor.data.content | safe }}
       {{ doctor.data.thumbnail | safe }}
       <img src="{{ doctor.data.thumbnail | safe }}" alt="">
