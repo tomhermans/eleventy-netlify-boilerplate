@@ -3,7 +3,7 @@
 	{% for doctor in collections.doctor %}
 	<li>
 		<div>
-			<h2>{{ doctor.data.name }}</h2>
+			<h2 class="text-blue-700 text-xl">{{ doctor.data.name }}</h2>
 			<small>{{ doctor.data.date }}</small>
 			{{ doctor.data.content | safe }}
 		</div>
