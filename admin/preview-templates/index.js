@@ -6,6 +6,8 @@ CMS.registerPreviewTemplate("blog", Post);
 CMS.registerPreviewTemplate("pages", Page);
 
 CMS.registerPreviewStyle("/_includes/assets/css/inline.css");
+CMS.registerPreviewStyle('/_includes/assets/css/tailwind.css');
+
 // Register any CSS file on the home page as a preview style
 fetch("/")
   .then(response => response.text())
